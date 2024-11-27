@@ -1,31 +1,53 @@
-<<<<<<< HEAD
-# Mybank
+MyBank 🏦
+MyBank is a modern web application built using Angular, designed to simplify and streamline banking services for users. This project showcases clean, modular code and Angular best practices, making it both user-friendly and developer-friendly.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+🚀 Features
+Responsive Design: Fully optimized for desktop and mobile devices.
+Modular Architecture: Easy to scale and maintain.
+Dynamic Components: Interactive user interface powered by Angular.
+Built with Modern Tools: Leveraging the latest Angular CLI and TypeScript features.
+🛠️ Installation and Setup
+Follow these steps to set up the project locally:
 
-## Development server
+Prerequisites
+Node.js: Install the latest LTS version from Node.js Official Site.
+Angular CLI: Install globally:
+npm install -g @angular/cli
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Clone this repository:bash
+Copy cod
+git clone [[https://github.com/your-username/MyBank.git](https://github.com/natypa2000/MyBank.git)](https://github.com/natypa2000/MyBank.git)
+cd MyBank
 
-## Code scaffolding
+Install the project dependencies:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+npm install
 
-## Build
+Start the development server:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+ng serve
+Open your browser and navigate to:
+http://localhost:4200
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+🏗️ Building for Production
+To build the application for production use:
 
-## Running end-to-end tests
+ng build --prod
+The optimized files will be generated in the dist/ directory, ready to be deployed.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
-# MyBank
->>>>>>> 4833968f38dc761ffc9859ce47038e211468cb92
+📁 Project Structure
+bash
+Copy code
+mybank/
+├── src/                  # Source code
+│   ├── app/              # Application components
+│   ├── assets/           # Static assets (images, icons, etc.)
+│   ├── environments/     # Environment-specific configurations
+│   └── index.html        # Main entry HTML
+├── angular.json          # Angular CLI configuration
+├── package.json          # Project dependencies and scripts
+├── tsconfig.json         # TypeScript configuration
+├── .gitignore            # Ignored files for Git
+├── README.md             # Project documentation
+└── dist/                 # Production build output
