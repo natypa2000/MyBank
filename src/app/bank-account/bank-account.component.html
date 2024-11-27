@@ -1,0 +1,53 @@
+<div class="title" dir="rtl">הזנת תנועות</div>
+<div id="owner">
+    <h1>
+        Welcome to the {{accountDetails.toString()}}
+    </h1>
+    <br />
+</div>
+<div id="transaction" dir=rtl>
+    <div >
+    <p>
+        <label for=amount>סכום:</label>
+        <input required type=number id=amount min=0 [(ngModel)]="currentAmount" />
+        <br />
+        <br />
+        <label for=asmachta>אסמכתא:</label>
+        <textarea id=asmachta [(ngModel)]="currentTransactionAsmachta">{{currentTransactionAsmachta}}</textarea>
+        <br />
+        <br />
+        <label required for=taarich>תאריך:</label>
+        <input required type=date id=taarich [(ngModel)]="currentTransactionDateS" />
+        <br />
+        <br />
+        <label for=note>הערה:</label>
+        <textarea id=note [(ngModel)]="currentNote"></textarea>
+        <br />
+        <br />
+        <label for=sugpeula>סוג פעולה:</label>
+        <select *ngIf="currentNumerator==0" required id=sugpeula [(ngModel)]="currentTransactionType">
+            <option value="-1">נא לבחור</option>
+                <option value="0">Open Account</option>
+                <option value="1">Deposit</option>
+            </select>
+            <select *ngIf="currentNumerator!=0" required id=sugpeula [(ngModel)]="currentTransactionType">
+                <option value="1">Deposit</option>
+                <option value="2">Withdraw</option>
+            </select>
+        <br />
+        <br />
+        <button type="button" (click)='doTransaction();'>בצע פעולה </button>
+        <br />
+        <br />
+    </p>
+    <p *ngIf="!lastActionFail">
+        {{transaction}}
+    </p>
+    <p *ngIf="!lastActionFail" [class.minus]='currentBalance<0'>
+        your current balance is: {{currentBalance|currency:'ILS'}}
+    </p>
+    <p *ngIf="lastActionFail" dir="rtl">
+        פעולת נדחתה עקב חריגה צפויה מתקרת אשראי של <bdo dir="ltr">{{accountDetails.limit|currency:'ILS'}}</bdo>
+    </p>
+    </div>
+</div>

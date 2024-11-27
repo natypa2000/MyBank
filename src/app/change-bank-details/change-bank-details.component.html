@@ -1,0 +1,30 @@
+<h1 dir="rtl">עריכת פרטי סניף בנק</h1>
+<div *ngIf="action==true">
+    <label for="branchName">שם סניף:</label>
+    <input required type="text" id="branchName" [(ngModel)]="branchName" />
+    <br>
+    <label for="branchNumber">מספר סניף:</label>
+    <input required type="number" id="branchNumber" [(ngModel)]="branchNumber">
+    <br>
+    <label for="accountNumber">מספר חשבון:</label>
+    <input required type="number" id="accountNumber" [(ngModel)]="bank.accountNumber" disabled>
+    <br>
+    <button type="button" (click)="changeDetails()">שמור שינוי פרטי סניף בנק</button>
+</div>
+<div *ngIf="action==false">
+    <label for="branchName">שם סניף:</label>
+    <input disabled type="text" id="branchName" [(ngModel)]="branchName" />
+    <br>
+    <label for="branchNumber">מספר סניף:</label>
+    <input disabled type="number" id="branchNumber" [(ngModel)]="branchNumber">
+    <br>
+    <label for="accountNumber">מספר חשבון:</label>
+    <input disabled type="number" id="accountNumber" [(ngModel)]="bank.accountNumber" disabled>
+    <br>
+    <button type="button" (click)="revert()">בטל שינוים</button>
+</div>
+<br>
+<br>
+<div>
+<button type="button" (click)="changeButton()">{{(action)?'אנא לחץ על כפתור ה- "שמור שינויי פרטי סניף בנק" בשביל לשמור את השינווים':'עריכה'}}</button>
+</div>

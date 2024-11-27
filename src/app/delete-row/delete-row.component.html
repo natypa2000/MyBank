@@ -1,0 +1,28 @@
+<div dir="rtl">
+    <div>הכנס מספר נומרטור שתרצה לראות</div>
+    <input required type="number" [(ngModel)]="rowNum" />
+    <button type="button" (click)="findRow()">הראה נומרטור</button>
+    <button type="button" (click)="deleteRow()">תמחק נומרטור זה</button>
+    <button type="button" routerLink="/ShowTable">תחזור לטבלה</button>
+    <br />
+    <label for="amount">סכום:</label>
+    <div id="amount">{{transaction.amount | currency: 'ILS'}}</div>
+    
+    <label for="taarich">תאריך:</label>
+    <div id="taarich">{{transaction.trnDate | date: 'dd/MM/yyyy'}}</div>
+    <br>
+    <label for="asmachta">אסמכתא:</label>
+    <div id="asmachta">{{transaction.asmachta}}</div>
+    <br>
+    <label for="type">סוג פעולה:</label>
+    <div id="type">{{transName}}</div>
+    <br>
+    <label for="numerator">נומרטור:</label>
+    <div id="numerator">{{transaction.numerator}}</div>
+    <br>
+    <label for="currentBalance">יתרה רגעית:</label>
+    <div id="currentBalance">{{transaction.currentBalance | currency: 'ILS'}}</div>
+    <br>
+    <label for="note">הערה:</label>
+    <div id="note">{{transaction.note}}</div>
+</div>

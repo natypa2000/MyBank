@@ -1,0 +1,15 @@
+<div dir=rtl style="justify-content: center;" *ngIf="!showMenu()">
+    <img src="assets/images/noImage.png" height="80">שם בעל החשבון:{{getAccountOwnerName()}}
+    <br/>
+    {{secondLine() | currency: 'ILS'}}
+    <br>
+    {{thirdLine() | date: 'dd/MM/yyyy'}}
+    <ul class="nav"  style="justify-content: center;">
+        <li class="nav-item"><a class="nav-link" routerLink="/BankAccount">הזנת תנועות</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/AccountOwner">שינוי פרטי בעל החשבון </a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/ShowTable">הראה טבלה</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/ChangeBankDetails">שינוי סניף בנק</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/ChangePassword">שינוי סיסמא </a></li>
+        <li class="nav-item"><a class="nav-link" style="cursor:pointer ;" (click)="logOut()">התנתקות </a></li>
+    </ul>
+</div>

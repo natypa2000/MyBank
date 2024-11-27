@@ -1,0 +1,22 @@
+<div>
+    <div dir="rtl">טבלת תנועות</div>
+    <table style="width:100%" dir="rtl">
+        <tr >
+        <th>ערך הנומרטור</th>
+        <th>תאריך</th>
+        <th>סוג הפעולה</th>
+        <th>סכום</th>
+        <th>יתרה רגעית</th>
+        </tr>
+        <tr *ngFor="let record of recordtrans; let i=index">
+            <td><a routerLink="/ShowStudent">{{record.numerator}}</a></td>
+            <td>{{record.trnDate | date: 'dd/MM/yyyy'}}</td>
+            <td>{{transName[record.trnTyp]}}</td>
+            <td>{{record.amount | currency: 'ILS'}}</td>
+            <td dir="ltr" [class.minus]="record.currentBalance<0">{{record.currentBalance | currency: 'ILS'}}</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <button routerLink="/DeleteRow">למחיקת שורה לחץ כאן</button>
+</div>

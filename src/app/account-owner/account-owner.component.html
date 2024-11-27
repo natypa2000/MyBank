@@ -1,0 +1,40 @@
+<h1>עריכת פרטי בעל החשבון</h1>
+<span dir="rtl" style="margin:auto; display:table;">
+    בעל החשבון: {{owner.name}}
+</span>
+<div><img [src]="(owner.hasPicture)?'assets/images/'+owner.tz+'.png':'assets/images/noImage.png'" height="80" dir="rtl" style="margin-left:auto; margin-right:auto;" ></div>
+<div  *ngIf="action==true">
+    <label for=shem>שם:</label>
+    <input required type=text id=shem [(ngModel)]="name">
+    <br>
+    <label for=adrs>כתובת:</label>
+    <input required type=text id=adrs [(ngModel)]="address">
+    <br>
+    <label for=tzNum>תז:</label>
+    <input required type=number id=tzNum value={{owner.tz}} disabled>
+    <br>
+    <label for=pic>יש תמונה:</label>
+    <input required type=checkbox id=pic [(ngModel)]="owner.hasPicture">
+    <br>
+    <button required type="button" (click)="changeDetails()">change details</button>
+</div>
+<div  *ngIf="action==false">
+    <label for=shem>שם:</label>
+    <input disabled="" type=text id=shem [(ngModel)]="name">
+    <br>
+    <label for=adrs>כתובת:</label>
+    <input disabled type=text id=adrs [(ngModel)]="address">
+    <br>
+    <label for=tzNum>תז:</label>
+    <input disabled type=number id=tzNum value={{owner.tz}} disabled>
+    <br>
+    <label for=pic>יש תמונה:</label>
+    <input disabled type=checkbox id=pic [(ngModel)]="owner.hasPicture">
+    <br>
+    <button type="button" (click)="revert()">בטל שינוים</button>
+</div>
+<br>
+<br>
+<div>
+<button type="button" (click)="changeButton()">{{(action)?'אנא לחץ על כפתור ה- "change details" בשביל לשמור את השינוים':'עריכה'}}</button>
+</div>

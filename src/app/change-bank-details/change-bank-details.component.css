@@ -1,0 +1,5 @@
+div{direction:rtl;text-align: center;}
+button{direction: rtl;text-align: center;}
+input:invalid{background-color: red;}
+input:valid{background-color: green;}
+h1{text-align: center;}
